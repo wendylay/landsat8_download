@@ -1,6 +1,5 @@
 import landsatxplore.api
 from landsatxplore.earthexplorer import EarthExplorer
-import re
 
 """
 previous:
@@ -18,8 +17,8 @@ https://github.com/wendylay/landsatxplore/tree/master/landsatxplore
 def landsat8_search(dataset='LANDSAT_8_C1', bbox=(), start_date='',
                     end_date='', max_cloud_cover=20):
     # Initialize a new API instance and get an access key
-    username = 'wendina_lai@163.com'
-    password = '0802Laiwendian'
+    username = 'your_username'
+    password = 'your_password'
     api = landsatxplore.api.API(username, password)
 
     # Request
@@ -36,8 +35,8 @@ def landsat8_search(dataset='LANDSAT_8_C1', bbox=(), start_date='',
 
 
 def landsat8_download(scenes, output_dir='./data'):
-    username = 'wendina_lai@163.com'
-    password = '0802Laiwendian'
+    username = 'your_username'
+    password = 'your_password'
     ee = EarthExplorer(username, password)
     try:
         for idx in range(len(scenes)):
@@ -54,8 +53,8 @@ def landsat8_download_entityId(entityId, output_dir='./data'):
     """
     entityId: list type
     """
-    username = 'wendina_lai@163.com'
-    password = '0802Laiwendian'
+    username = 'your_username'
+    password = 'your_password'
     ee = EarthExplorer(username, password)
     for idx in range(len(entityId)):
         ee.download(scene_id=entityId[idx], output_dir=output_dir)  # download with entityId
@@ -66,7 +65,7 @@ if __name__ == '__main__':
     # Example1 : search and download
     start_date = '2018-10-13'
     end_date = '2020-11-30'
-    max_cloud_cover = 30
+    max_cloud_cover = 10
     bbox = (23.4, -79.21, 25.38, -76.87)  # (latmin, lonmin, latmax, lonmax)
     scenes = landsat8_search(start_date=start_date, end_date=end_date,
                              bbox=bbox, max_cloud_cover=max_cloud_cover)
@@ -74,5 +73,5 @@ if __name__ == '__main__':
     # landsat8_download(scenes)
 
     # Example2 :download with entityid
-    # entityId = ['LC80100442020272LGN00']
-    # landsat8_download_entityId(entityId=entityId, output_dir='./download_data')
+    entityId = ['LC80100442020272LGN00']
+    landsat8_download_entityId(entityId=entityId, output_dir='./download_data')
