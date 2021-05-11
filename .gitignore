@@ -1,0 +1,5 @@
+# untrack file
+*.py
+
+# track file
+!Landsat8_example.py
