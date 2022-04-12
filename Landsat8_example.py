@@ -63,15 +63,16 @@ def landsat8_download_entityId(entityId, output_dir='./data'):
 
 if __name__ == '__main__':
     # Example1 : search and download
-    start_date = '2018-10-13'
-    end_date = '2020-11-30'
-    max_cloud_cover = 10
-    bbox = (23.4, -79.21, 25.38, -76.87)  # (latmin, lonmin, latmax, lonmax)
-    scenes = landsat8_search(start_date=start_date, end_date=end_date,
-                             bbox=bbox, max_cloud_cover=max_cloud_cover)
-    print('{} scenes found.'.format(len(scenes)))
+    # start_date = '2018-10-13'
+    # end_date = '2020-11-30'
+    # max_cloud_cover = 10
+    # bbox = (23.4, -79.21, 25.38, -76.87)  # (latmin, lonmin, latmax, lonmax)
+    # scenes = landsat8_search(start_date=start_date, end_date=end_date,
+    #                          bbox=bbox, max_cloud_cover=max_cloud_cover)
+    # print('{} scenes found.'.format(len(scenes)))
     # landsat8_download(scenes)
 
     # Example2 :download with entityid
-    entityId = ['LC80100442020272LGN00']
-    landsat8_download_entityId(entityId=entityId, output_dir='./download_data')
+    # entityId = ['LC81220492020081LGN00']
+    # landsat8_download_entityId(entityId=entityId, output_dir='E:/Landsat 8/Application/Circle_like')
+    pass
